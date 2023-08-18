@@ -2,7 +2,7 @@
 
 /**
  * print_line - draws atraight line in the terminal
- * @n numner of times _ is printed
+ * @n: numner of times _ is printed
  * Returm: void
  */
 
