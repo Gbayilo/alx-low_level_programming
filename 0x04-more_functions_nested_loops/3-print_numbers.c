@@ -8,7 +8,7 @@
 
 void print_numbers(void)
 {
-	int c
+	int c;
 
 	for (c = 0; c < 10; c++)
 	{
