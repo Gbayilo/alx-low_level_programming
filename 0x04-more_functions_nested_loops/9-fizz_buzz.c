@@ -27,7 +27,7 @@ int main(void)
 
 		if (j != 100)
 			printf(" ");
-		j++
+		j++;
 	}
 	printf("\n");
 
