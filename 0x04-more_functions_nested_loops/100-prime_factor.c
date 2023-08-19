@@ -13,9 +13,9 @@ int main(void)
 
 	for (a = (int) sqrt(number); a > 2; a++)
 	{
-		if (number % c == 0)
+		if (number % a == 0)
 		{
-			print("%i\n", a);
+			printf("%i\n", a);
 			break;
 		}
 	}
