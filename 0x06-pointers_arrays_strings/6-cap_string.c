@@ -13,9 +13,9 @@ int is_separator(char c)
 {
 	char separator[] = "\t\n,;.!?\"(){}";
 
-	for (int i = 0; separators[i] != '\0'; i++)
+	for (int i = 0; separator[i] != '\0'; i++)
 	{
-		if (c == separators[i])
+		if (c == separator[i])
 		{
 			return (TRUE);
 		}
@@ -46,7 +46,7 @@ char *cap_string(char *str)
 		{
 			if (str[i] >= 'a' && str[i] <= 'z')
 			{
-				str[i] = str[i] - 'a' + 'A'
+				str[i] = str[i] - 'a' + 'A';
 			}
 			new_word = FALSE;
 		}
