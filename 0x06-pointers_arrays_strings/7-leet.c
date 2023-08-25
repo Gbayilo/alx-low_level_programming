@@ -13,9 +13,9 @@ char *leet(char *str)
 
 	char *initial =  str;
 
-	for (int i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (int j = 0; "aeotlAEOTL"[j] != '\0'; j++)
+		for (j = 0; "aeotlAEOTL"[j] != '\0'; j++)
 		{
 			if (str[i] == "aeotlAEOTL"[j])
 			{
