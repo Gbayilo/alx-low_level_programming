@@ -11,18 +11,19 @@ char *leet(char *str)
 {
 	int i, j;
 
-	char *initial =  str;
+	char a[] = "aAeEoOtTlL";
+	char b[] = "4433007711";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (j = 0; "aeotlAEOTL"[j] != '\0'; j++)
+		for (j = 0; j <= 9; j++)
 		{
-			if (str[i] == "aeotlAEOTL"[j])
+			if (a[j] == str[i])
 			{
-				str[i] = "43071043"[j];
+				str[i] = b[j];
 				break;
 			}
 		}
 	}
-	return (initial);
+	return (str);
 }
