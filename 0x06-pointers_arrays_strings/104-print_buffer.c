@@ -37,11 +37,11 @@ void print_buffer(char *b, int size)
 		{
 			int chr = *(b + i + k);
 
-			if (chr < 32 || chr > 132)
+			if (chr < 32 || chr > 126)
 			{
-				chr = '-';
+				chr = '.';
 			}
-			printf("%c", chr);
+			putchar(chr);
 		}
 		printf("\n");
 		i += 10;
