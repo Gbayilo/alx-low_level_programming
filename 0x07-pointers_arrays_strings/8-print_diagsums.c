@@ -16,8 +16,8 @@ void print_diagsums(int *a, int size)
 
 	for (i = 0; i < size; i++)
 	{
-		main_diag_sum += a[i + size + i];
-		anti_diag_sum += a[i * size + (size - 1 - i)];
+		main_diag_sum += *(a + (size * i + 1));
+		anti_diag_sum += *(a + (size * i + size - 1 - i));
 	}
 
 	printf("%d, ", main_diag_sum);
