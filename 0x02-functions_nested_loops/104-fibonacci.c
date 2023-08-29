@@ -40,7 +40,7 @@ int main(void)
 			else if (a3 >= 10)
 				printf("%lu%02lu", b3, a3);
 			else
-				printf("%lu", a3);
+				printf("%lu%01lu", b3, a3);
 
 		if (i != 96)
 			printf(", ");
