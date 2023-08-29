@@ -20,7 +20,7 @@ void print_diagsums(int *a, int size)
 		anti_diag_sum += a[i * size + (size - 1 - i)];
 	}
 
-	printf("%d\, ", main_diag_sum);
+	printf("%d, ", main_diag_sum);
 	printf("%d\n", anti_diag_sum);
 }
 
