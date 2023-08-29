@@ -9,15 +9,26 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i;
+	int i, j;
 
 	int main_diag_sum = 0;
 	int anti_diag_sum = 0;
 
 	for (i = 0; i < size; i++)
 	{
-		main_diag_sum += *(a + (size * i + 1));
-		anti_diag_sum += *(a + (size * i + size - 1 - i));
+		for (j = 0; j < size; j++)
+		{
+			if (i == j)
+			{
+				main_diag_sum += *(a + i * size + j);
+			}
+			if (i + j == size - 1)
+			{
+				anti_diag_sum += *(a + i * size + j);
+			}
+
+		}
+
 	}
 
 	printf("%d, ", main_diag_sum);
