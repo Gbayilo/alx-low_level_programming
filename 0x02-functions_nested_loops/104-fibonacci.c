@@ -10,43 +10,31 @@
  */
 int main(void)
 {
-	unsigned long a1, a2, a3, sum1;
-	unsigned long b1, b2, b3, sum2;
-	int i;
+	unsigned long int a, b, c, b1, b2, c1, c2;
 
-	printf("1, 2");
-	for (a1 = 1, b1 = 2, i = 1; i < 90; i++)
+	b = 1, c = 2;
+	printf("%lu", b);
+	for (a = 1; a < 91; a++)
 	{
-		sum1 = a1 + b1;
-		printf(", %lu", sum1);
-		a1 = b1;
-		b1 = sum1;
+		printf(", %lu", c);
+		c = c + b;
+		b = c - b;
 	}
-	printf(", ");
-	a2 = a1 % 1000;
-	a1 = a1 / 1000;
-	b2 = b1 % 1000;
-	for (; i < 97; i++)
+	b1 = b / 1000000000;
+	b2 = b % 1000000000;
+	c1 = c / 1000000000;
+	c2 = c % 1000000000;
+	for (a = 92; a < 99; a++)
 	{
-		sum2 = (a2 + b2) / 1000;
-		a3 = (a2 + b2) - sum2 * 1000;
-		b3 = (a1 + b1) + sum2;
-		a2 = b2;
-		b2 = a3;
-		if (b3 > 0)
-		{
-			if (a3 >= 100)
-				printf("%lu%03lu", b3, a3);
-			else if (a3 >= 10)
-				printf("%lu%02lu", b3, a3);
-			else
-				printf("%lu%01lu", b3, a3);
-
-		if (i != 96)
-			printf(", ");
-		}
+		printf(", %lu", c1 + (c2 / 1000000000));
+		printf("%lu", c2 % 1000000000);
+		c1 = c1 + c1;
+		b1 = c1 - b1;
+		c2 = c2 + b2;
+		b2 = c2 - b2;
 	}
 	printf("\n");
+
 	return (0);
 }
 
