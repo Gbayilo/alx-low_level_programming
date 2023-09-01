@@ -32,8 +32,6 @@ int main(int argc, char *argv[])
 {
 	int sum, i;
 
-	(void)argv;
-
 	sum = 0;
 
 	if (argc == 1)
