@@ -1,28 +1,44 @@
 #include "3-calc.h"
 
 /**
- * main - Perform simple operation between two numbers.
- * @ac: Argument count.
- * @av: Argument vecteur.
+ * main - Entry point for the calculator program
+ * @argc: Number of command-line arguments
+ * @argv: Array of command-line argument strings
  *
- * Return: 0  on Success.
+ * Return: 0 upon successful execution, 98 for incorrect number of arguments,
+ * 99 for an invalid operator, and 100 for division or modulo by zero.
  */
-int main(int ac, char **av)
+int main(int argc, char *argv[])
 {
+	int num1, num2, result;
 	int (*operation)(int, int);
 
-	if (ac != 4)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	operation = get_op_func(av[2]);
-	if (operation == 0)
+
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
+
+	if (num2 == 0 && (argv[2][0] == '/' || argv[2][0] == '%'))
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+	operation = get_op_func(argv[2]);
+
+	if (operation == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	printf("%d\n", operation(atoi(av[1]), atoi(av[3])));
+
+	result = operation(num1, num2);
+
+	printf("%d\n", result);
 
 	return (0);
 }
