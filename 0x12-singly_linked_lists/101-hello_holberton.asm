@@ -1,18 +1,24 @@
 section .data
-    hello_message db "Hello, Holberton",10,0  ; The message to print, with a newline character and null terminator
+	hello_message db "Hello, Holberton",0
+	fmt db '%s', 10, 0
 
 section .text
-    global main
+	global main
 
 extern printf
 
 main:
-    push rbp              ; Save the base pointer
-    mov rdi, hello_message  ; Load the address of the message into rdi
-    call printf            ; Call printf
-    pop rbp               ; Restore the base pointer
-    ret                   ; Return
+	push rbp              
+	mov rbp, rsp
 
-section .bss
-    ; Define any uninitialized data here if needed
+	mov rdi, fmt
+	mov rsi, hello
+	xor rax, rax
+	call printf
+
+	xor eax, eax
+	mov rsp, rbp
+	pop rbp
+	ret
+
 
