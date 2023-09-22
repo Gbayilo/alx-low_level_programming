@@ -1,24 +1,17 @@
 section .data
-	hello_message db "Hello, Holberton",0
-	fmt db '%s', 10, 0
+hello_message:	db "Hello, Holberton",10,0 
+fmt:		db "%s", 10. 0
 
-section .text
+	section .text
 	global main
-
-extern printf
+	extern printf
 
 main:
-	push rbp              
-	mov rbp, rsp
-
-	mov rdi, fmt
-	mov rsi, hello
-	xor rax, rax
+	mov esi, hello_message
+	mov edi, fmt
+	mov eax, 0
 	call printf
 
-	xor eax, eax
-	mov rsp, rbp
-	pop rbp
+	mov eax, 0
 	ret
-
 
