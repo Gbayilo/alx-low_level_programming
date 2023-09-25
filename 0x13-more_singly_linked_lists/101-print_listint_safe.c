@@ -21,12 +21,14 @@ size_t print_listint_safe(const listint_t *head)
 		hare = hare->next->next;
 
 		count++;
+
+		if (tortoise == hare)
+		{
+			printf("-> [%p] %d\n", (void *)tortoise, tortoise->n);
+			break;
+		}
 	}
-	if (tortoise == hare)
-	{
-		printf("-> [%p] %d\n", (void *)tortoise, tortoise->n);
-		break;
-	}
+
 
 	return (count);
 
