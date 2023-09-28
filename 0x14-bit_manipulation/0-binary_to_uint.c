@@ -10,7 +10,6 @@
 unsigned int binary_to_uint(const char *binary_string)
 {
 	unsigned int decimal_result = 0;
-	unsigned int binary_base = 1;
 	int i;
 
 	if (binary_string == NULL)
