@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
-* allocate_buffer - Allocates 1024 bytes for a buffer.
-* @filename: The name of the file the buffer stores for char.
-*
-* Return: A pointer to the newly created buffer.
-*/
-char *allocate_buffer(char *filename)
+ * allocate_buffer - Allocates 1024 bytes for a buffer.
+ * @file: The name of the file the buffer stores for char.
+ *
+ * Return: A pointer to the newly created buffer.
+ */
+char *allocate_buffer(char *file)
 {
 	char *buffer;
 
@@ -15,35 +15,35 @@ char *allocate_buffer(char *filename)
 	if (buffer == NULL)
 	{
 		dprintf(STDERR_FILENO,
-		"Error: Can't write to %s\n", filename);
+		"Error: Can't write to %s\n", file);
 		exit(99);
 	}
 	return (buffer);
 }
 
 /**
-* close_file_descriptor - Closes file descriptors.
-* @file_descriptor: The file descriptor to be closed.
-*/
-void close_file_descriptor(int file_descriptor)
+ * close_fd - Closes file descriptors.
+ * @fd: The file descriptor to be closed.
+ */
+void close_fd(int fd)
 {
 	int result;
 
-	result = close(file_descriptor);
+	result = close(fd);
 	if (result == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_descriptor);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
 
 /**
-* main - Copies the contents of a file to another file.
-* @argc: The number of arguments recieved by the program.
-* @argv: An array of pointers to the arguments.
-*
-* Return: 0 on success.
-*/
+ * main - Copies the contents of a file to another file.
+ * @argc: The number of arguments recieved by the program.
+ * @argv: An array of pointers to the arguments.
+ *
+ * Return: 0 on success.
+ */
 int main(int argc, char *argv[])
 {
 	int src_fd, dest_fd, read_bytes, write_bytes;
@@ -87,4 +87,3 @@ int main(int argc, char *argv[])
 	close_fd(dest_fd);
 	return (0);
 }
-
