@@ -1,4 +1,4 @@
-#include "lists.h"
+#include "lists.h"  // Assuming your header file is named "lists.h"
 
 /**
 * add_dnodeint_end - Adds a new node at the end of a dlistint_t list.
@@ -19,6 +19,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 
 	new_node->n = n;
 	new_node->next = NULL;
+
 
 	temp = *head;
 	while (temp != NULL && temp->next != NULL)
