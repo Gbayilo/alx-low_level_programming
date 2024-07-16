@@ -14,14 +14,14 @@
 int interpolation_search(int *array, size_t size, int value)
 {
 	size_t start, end, pos;
-	double fraction;
+
 
 	if (array == NULL)
 		return (-1);
 
 	for (start = 0, end = size - 1; end >= start;)
 	{
-		pos = end + (((double)(end - start) /
+		pos = start + (((double)(end - start) /
 			(array[end] - array[start])) * (value - array[start]));
 
 		if (pos < size)
