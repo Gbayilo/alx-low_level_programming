@@ -1,18 +1,20 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+
 /**
- * main - entry point
- * Return: Always 0
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
+
 int main(void)
 {
-	int i;
+	int num = 48;
 
-	for (i = 0; i < 10; i++)
-		putchar(i + '0');
+	while (num <= 57)
+	{
+		putchar(num);
+		num++;
+	}
 	putchar('\n');
 	return (0);
-
 }
-
