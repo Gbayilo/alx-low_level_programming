@@ -1,19 +1,20 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - Entry point of the program
+ *
+ * Description: Prints all single digit numbers of base 10
  *
  * Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	int num = 48;
+	int var;
 
-	while (num <= 57)
+	for (var = 48; var <= 57; var++)
 	{
-		putchar(num);
-		num++;
+		putchar(var);
 	}
 	putchar('\n');
 	return (0);
