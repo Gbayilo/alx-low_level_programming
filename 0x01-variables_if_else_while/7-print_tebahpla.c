@@ -1,18 +1,21 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "time.h"
+#include <stdio.h>
+
 /**
- * main - Entry point
- * Return: Always 0
+ * main - Entry point of the program
+ *
+ * Description: Prints the lowercase alphabet in reverse
+ *
+ * Return: Always 0 (Success)
  */
+
 int main(void)
 {
-	char i;
+	char c;
 
-	for (i = 'z'; i >= 'a'; i--)
-	putchar(i);
+	for (c = 'z'; c <= 'a'; c--)
+	{
+		putchar(c);
+	}
 	putchar('\n');
 	return (0);
 }
-
-
