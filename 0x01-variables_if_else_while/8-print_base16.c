@@ -1,17 +1,25 @@
 #include <stdio.h>
+
 /**
- * main - Entry point
- * Return: Always 0
+ * main - Entry point of the program
+ *
+ * Description: prints all the numbers of base16
+ *
+ * Return: Always 0 (Success)
  */
+
 int main(void)
 {
-	int d;
-	char low;
+	int dec, hex;
 
-	for (d = '0'; d <= '9'; d++)
-		putchar (d);
-	for (low = 'a'; low <= 'f'; low++)
-		putchar(low);
+	for (dec = 48; dec <= 57; dec++)
+	{
+		putchar(dec);
+	}
+	for (hex = 97; hex <= 102; hex++)
+	{
+		putchar(hex);
+	}
 	putchar('\n');
 	return (0);
 }
